@@ -1,8 +1,8 @@
 <template>
     <nav class="nav-header">
       <div class="nav-container">
-        <RouterLink to="/" class="nav-link">Home</RouterLink>
-        <RouterLink to="/about" class="nav-link">About</RouterLink>
+        <RouterLink to="/" class="nav-link">Vis info</RouterLink>
+        <RouterLink to="/about" class="nav-link">Opret info</RouterLink>
       </div>
     </nav>
   </template>

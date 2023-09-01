@@ -1,7 +1,6 @@
 <template>
   <div class="about-view">
-    <h1>About Us</h1>
-    <p>Welcome to our About Us page! Here you can find information about our team.</p>
+    <h1>Opret post til din vidensbank</h1>
     <FormComponent />
   </div>
 </template>

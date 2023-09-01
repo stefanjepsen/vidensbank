@@ -38,6 +38,7 @@ const submitForm = async () => {
   } else {
     header.value = '';
     info.value = '';
+    alert('Du har nu tilføjet noget til din vidensbank - Hvor er du god mus ❤️❤️❤️') 
     console.log('Form submitted successfully:', data)
   }
 }
