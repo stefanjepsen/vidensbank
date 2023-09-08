@@ -1,10 +1,12 @@
 <template>
   <div class="data-container">
-    <h2 class="data-heading">Supabase Data Component</h2>
+    <h2 class="data-heading">Marias Vidensbank</h2>
+    <RouterLink to="/about" class="logout-button">Opret info</RouterLink>
     <div class="search-container">
       <input type="text" v-model="searchQuery" placeholder="Search...">
     </div>
-    <div v-if="loading" class="loading">Loading data...</div>
+   
+    <div v-if="loading" class="loader"></div>
     <div v-else class="data-content">
       <div v-for="(item, index) in filteredData" :key="index" :class="{ 'data-card': true, 'zoom-card': item.isEditing }">
         <div v-if="!item.isEditing">
@@ -134,13 +136,25 @@ const filteredData = computed(() => {
   margin-bottom: 20px;
 }
 
-.loading {
-  font-style: italic;
-  color: #666;
+.loader {
+  border: 15px solid #7E57C2;
+border-top: 15px solid transparent;
+border-radius: 50%;
+width: 150px;
+height: 150px;
+animation: spin-ff31f0f8 1s linear infinite;
+position: absolute;
+left: 50%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .search-container {
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .search-container input {
@@ -163,6 +177,12 @@ const filteredData = computed(() => {
   margin: 10px;
   width: 300px;
   transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+@media (max-width: 680px) {
+  .data-card{
+    width: 100%;
+  }
 }
 
 .data-card-header {
@@ -251,5 +271,22 @@ const filteredData = computed(() => {
   top: 50%;
 /*  left: 50%; */
   transform-origin: center center;
+}
+
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #cc66ff; /* Red button color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  margin-bottom: 10px;
+}
+
+.logout-button:hover {
+  background-color: #33beff; /* Darker red button color on hover */
 }
 </style>
